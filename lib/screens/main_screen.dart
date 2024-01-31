@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:iconly/iconly.dart';
 
+import '../services/assets_manager.dart';
+import 'chat_screen.dart';
 import 'home.dart';
-import 'huduma.dart';
-import 'mipangalio.dart';
-import 'muda_maongezi.dart';
-import 'hamisha_pesa.dart';
+import 'services.dart';
+import 'settings.dart';
+import 'bundles.dart';
+import 'move_money.dart';
 import '../utils/colors.dart';
 
 class MainScreen extends StatefulWidget {
@@ -31,14 +35,10 @@ class _MainScreenState extends State<MainScreen> {
 
     _pages = [
       const HomePage(),
-      const MudaWaMaongeziScreen(),
-      const HamishaPesaScreen(),
-      const HudumaScreen(),
-      const MipangilioScreen()
-
-      // const ViewCrops(),
-      // const AddProduct(),
-      // const AccountPage(),
+      const BuyBundlesScreen(),
+      const MoveMoneyScreen(),
+      const AllServicesScreen(),
+      const SettingsScreen()
     ];
   }
 
@@ -47,31 +47,32 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       body: IndexedStack(index: _selectedIndex, children: _pages),
       bottomNavigationBar: BottomNavigationBar(
-        items: <BottomNavigationBarItem>[
+        items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: Icon(IconlyLight.home,size: 24,),
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.money_outlined),
+            icon: Icon(FontAwesomeIcons.coins,size: 24,),
             label: 'Buy Bundles',
+
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.payments_outlined),
+            icon: Icon(IconlyLight.send,size: 24,),
             label: 'Move Money',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.storefront),
+            icon: Icon(Icons.storefront,size: 24,),
             label: 'Services',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
+            icon: Icon(IconlyLight.setting,size: 24,),
             label: 'Settings',
           ),
         ],
         currentIndex: _selectedIndex, //New
         onTap: _onItemTapped,
-        iconSize: 28,
+        iconSize: 24,
         selectedFontSize: 13.0,
         unselectedFontSize: 12.0,
         showSelectedLabels: true,
@@ -84,6 +85,27 @@ class _MainScreenState extends State<MainScreen> {
         unselectedIconTheme: const IconThemeData(color: Colors.black54),
         unselectedItemColor: Colors.black,
       ),
+      floatingActionButton: FloatingActionButton(onPressed: (){
+        double height = MediaQuery.of(context).size.height*0.85;
+        showModalBottomSheet(
+          isDismissible: false,
+            isScrollControlled: true,
+            context: context,
+            builder: (context)=>Container(
+          width: MediaQuery.of(context).size.width,
+          height: height,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.only(topLeft: Radius.circular(14),topRight: Radius.circular(14)),
+            color: Colors.white
+          ),
+              child: const ChatScreen(),
+        ));
+      },
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+      backgroundColor: Colors.red.shade900,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(30),
+            child: Image.asset(AssetsManager.openaiLogo2)),),
     );
   }
 }
