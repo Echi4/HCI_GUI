@@ -1,3 +1,4 @@
+import 'package:blur/blur.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -45,18 +46,16 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ],
                   ),
-
                 ],
               ),
             ),
-
-
           ],
         ),
       );
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.red.shade900,
       appBar: AppBar(
         elevation: 0,
         centerTitle: false,
@@ -64,28 +63,41 @@ class _HomePageState extends State<HomePage> {
         title: Text(
           "Hello Juma",
           style: TextStyle(
-              fontSize: 22.0,
-              fontWeight: FontWeight.w600,
-              color: Colors.white),
+              fontSize: 22.0, fontWeight: FontWeight.w600, color: Colors.white),
         ),
         actions: [
-          Icon(CupertinoIcons.bell,color: Colors.white,size: 34,weight: 1,),
-          Icon(CupertinoIcons.qrcode_viewfinder,color: Colors.white,size: 34,weight: 1,),
-          SizedBox(width: 10,)
+          Icon(
+            CupertinoIcons.bell,
+            color: Colors.white,
+            size: 34,
+            weight: 1,
+          ),
+          SizedBox(
+            width: 5,
+          ),
+          Icon(
+            CupertinoIcons.qrcode_viewfinder,
+            color: Colors.white,
+            size: 34,
+            weight: 1,
+          ),
+          SizedBox(
+            width: 10,
+          )
         ],
       ),
       body: ListView(
+        physics: const ClampingScrollPhysics(),
         padding: EdgeInsets.zero,
-        children:  [
+        children: [
           Container(
             width: MediaQuery.of(context).size.width,
             height: 160,
             decoration: BoxDecoration(
-              color: Colors.red.shade900,
+                color: Colors.red.shade900,
                 border: Border.fromBorderSide(BorderSide.none)),
-            child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+            child:
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 8),
                 child: Center(
@@ -95,35 +107,76 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Text('M-Pesa account',style: TextStyle(color: Colors.white,fontWeight: FontWeight.w400,fontSize: 16),),
+                        child: Text(
+                          'M-Pesa account',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w400,
+                              fontSize: 16),
+                        ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(!_show?'Amount':'TZS 7,200',style: TextStyle(color: Colors.white,fontWeight:_show?FontWeight.w800: FontWeight.w400,fontSize:_show?18 :16)),
-                      ),
+                      if (!_show) ...[
+                        Blur(
+                          blur: 5,
+                          borderRadius: BorderRadius.circular(30),
+                          blurColor: Colors.red.shade900,
+                          child: Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Text(
+                              '7,200 TZS',
+                              style:TextStyle(
+                                  color: Colors.white,
+                                  fontWeight:
+                                  _show ? FontWeight.w800 : FontWeight.w400,
+                                  fontSize: _show ? 18 : 18),
+                            ),
+                          ),
+                        )
+                      ] else ...[
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(!_show ? 'Amount' : '7,200 TZS',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight:
+                                      _show ? FontWeight.w800 : FontWeight.w400,
+                                  fontSize: _show ? 24 : 16)),
+                        )
+                      ],
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Container(
                           width: 150,
                           height: 26,
                           decoration: BoxDecoration(
-                            color: Colors.transparent,
-                            borderRadius: BorderRadius.circular(30),
-                            border: Border.all(color: Colors.white)
-                          ),
+                              color: Colors.transparent,
+                              borderRadius: BorderRadius.circular(30),
+                              border: Border.all(color: Colors.white)),
                           child: GestureDetector(
-                            onTap: (){
+                            onTap: () {
                               setState(() {
-                                _show=!_show;
+                                _show = !_show;
                               });
                             },
-                            child: Center(child: Row(
+                            child: Center(
+                                child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                Icon(!_show?CupertinoIcons.eye:CupertinoIcons.eye_slash,color: Colors.white,),
-                                SizedBox(width: 10,),
-                                Text(!_show?'Show Balance':'Hide Balance',style: TextStyle(color: Colors.white,fontWeight: FontWeight.w400,fontSize: 12)),
+                                Icon(
+                                  !_show
+                                      ? CupertinoIcons.eye
+                                      : CupertinoIcons.eye_slash,
+                                  color: Colors.white,
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text(!_show ? 'Show Balance' : 'Hide Balance',
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 12)),
                               ],
                             )),
                           ),
@@ -133,9 +186,11 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               )
-                ]),
+            ]),
           ),
-          SizedBox(
+          Container(
+            color: Colors.white,
+            height: MediaQuery.of(context).size.height*0.8,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Column(
@@ -148,19 +203,22 @@ class _HomePageState extends State<HomePage> {
                     child: Material(
                       elevation: 5,
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                        side: BorderSide(color: Colors.black12,width: 2)
-                      ),
+                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                          side: BorderSide(color: Colors.black12, width: 2)),
                       child: Padding(
                         padding: EdgeInsets.symmetric(horizontal: 16),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Icon(Icons.receipt),
-                            Center(child: Text("M-Pesa Statements",style: TextStyle(fontWeight: FontWeight.w400,fontSize: 17),)),
+                            Center(
+                                child: Text(
+                              "M-Pesa Statements",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w400, fontSize: 17),
+                            )),
                             Icon(Icons.arrow_forward_ios,
                                 color: AppColors.primaryColor)
-
                           ],
                         ),
                       ),
