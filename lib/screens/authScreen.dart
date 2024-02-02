@@ -234,6 +234,7 @@ class _AuthScreenState extends State<AuthScreen> {
                         cursorColor: Colors.black,
                         // cursorHeight: 35,
                         showCursor: false,
+                        keyboardType: TextInputType.number,
                         inputFormatters: [
                           LengthLimitingTextInputFormatter(4),
                           FilteringTextInputFormatter.digitsOnly
