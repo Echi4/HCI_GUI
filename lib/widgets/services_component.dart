@@ -4,7 +4,7 @@ import '../utils/colors.dart';
 
 class SettingsSection extends StatelessWidget {
   final String title;
-  final List<SettingsContent> tile;
+  final List<Widget> tile;
   const SettingsSection({
     Key? key,
     this.title = '',

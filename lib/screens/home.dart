@@ -6,7 +6,7 @@ import 'package:mpesa_ui/data/home_data.dart';
 import 'package:mpesa_ui/utils/colors.dart';
 
 import '../components/services_panel.dart';
-import '../components/toapesa.dart';
+import '../components/withdraw.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

@@ -48,6 +48,7 @@ class _ChatScreenState extends State<ChatScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         leading: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Image.asset(AssetsManager.openaiLogo2),

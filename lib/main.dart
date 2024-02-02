@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:mpesa_ui/screens/authScreen.dart';
 import 'package:mpesa_ui/utils/colors.dart';
 
 import 'screens/main_screen.dart';
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const MainScreen(),
+      home: const AuthScreen(),
       builder: (context, child) {
         return MediaQuery(
           data: MediaQuery.of(context)
