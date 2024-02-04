@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:mpesa_ui/pages/topup.dart';
+import 'package:mpesa_ui/screens/send_money.dart';
 
 import '../data/home_data.dart';
 
@@ -26,10 +27,10 @@ class TransactionPanel extends StatelessWidget {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        // if(index==0){
-                        //   Navigator.push(context, MaterialPageRoute(builder:
-                        //   (context)=>SendMoneyScreen()));
-                        // }
+                        if(index==0){
+                          Navigator.push(context, MaterialPageRoute(builder:
+                          (context)=>SendingMoneyScreen()));
+                        }
                       },
                       child: SizedBox(
                         width: 60,

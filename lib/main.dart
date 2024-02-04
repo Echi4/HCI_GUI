@@ -2,11 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mpesa_ui/screens/authScreen.dart';
 import 'package:mpesa_ui/utils/colors.dart';
+import 'package:provider/provider.dart';
 
+import 'Providers/appState.dart';
 import 'screens/main_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp( MultiProvider(
+    providers:[
+      ChangeNotifierProvider(create: (context)=>AppState()),
+    ],
+    child:const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -24,6 +31,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
         appBarTheme: const AppBarTheme(
+          iconTheme: IconThemeData(color: Colors.white),
           titleTextStyle: TextStyle(color: Colors.white,fontSize: 24,fontWeight: FontWeight.w400)
         ),
         tabBarTheme: TabBarTheme(

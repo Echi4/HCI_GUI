@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:iconly/iconly.dart';
+import 'package:provider/provider.dart';
 
+import '../Providers/appState.dart';
 import '../services/assets_manager.dart';
 import 'chat_screen.dart';
 import 'home.dart';
@@ -23,15 +25,24 @@ class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
   double bottomBarWidth = 30;
   double bottomBarBorderWidth = 3;
+  // void _onItemTapped(int index) {
+  //   setState(() {
+  //     _selectedIndex = index;
+  //   });
+  // }
+
+  AppState? appState;
+
+
   void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
+    Provider.of<AppState>(context,listen: false).setBottomNavIndex(index);
   }
 
   @override
   void initState() {
     super.initState();
+
+
 
     _pages = [
       const HomePage(),
@@ -43,9 +54,15 @@ class _MainScreenState extends State<MainScreen> {
   }
 
   @override
+  void didChangeDependencies() {
+    appState = Provider.of<AppState>(context);
+    super.didChangeDependencies();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: IndexedStack(index: _selectedIndex, children: _pages),
+      body: IndexedStack(index: appState!.bottomNavIndex, children: appState!.bottomNavPages),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -70,7 +87,7 @@ class _MainScreenState extends State<MainScreen> {
             label: 'Settings',
           ),
         ],
-        currentIndex: _selectedIndex, //New
+        currentIndex: appState!.bottomNavIndex, //New
         onTap: _onItemTapped,
         iconSize: 24,
         selectedFontSize: 13.0,
