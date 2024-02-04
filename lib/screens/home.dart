@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:iconly/iconly.dart';
 import 'package:mpesa_ui/data/home_data.dart';
 import 'package:mpesa_ui/utils/colors.dart';
+import 'package:mpesa_ui/widgets/line_chart_card.dart';
 
 import '../components/services_panel.dart';
 import '../components/withdraw.dart';
@@ -27,7 +28,7 @@ class _HomePageState extends State<HomePage> {
               color: AppColors.primaryColor,
               height: height + 215,
               width: MediaQuery.of(context).size.width,
-              child: Column(
+              child: const Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -35,8 +36,8 @@ class _HomePageState extends State<HomePage> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(left: 16),
-                        child: const Text(
+                        padding: EdgeInsets.only(left: 16),
+                        child: Text(
                           "Hello Juma",
                           style: TextStyle(
                               fontSize: 22.0,
@@ -62,14 +63,14 @@ class _HomePageState extends State<HomePage> {
             elevation: 0,
             centerTitle: false,
             backgroundColor: Colors.red.shade900,
-            title: Text(
+            title: const Text(
               "Hello Juma",
               style: TextStyle(
                   fontSize: 22.0,
                   fontWeight: FontWeight.w600,
                   color: Colors.white),
             ),
-            actions: [
+            actions: const [
               Icon(
                 CupertinoIcons.bell,
                 color: Colors.white,
@@ -99,7 +100,7 @@ class _HomePageState extends State<HomePage> {
                 height: 160,
                 decoration: BoxDecoration(
                     color: Colors.red.shade900,
-                    border: Border.fromBorderSide(BorderSide.none)),
+                    border: const Border.fromBorderSide(BorderSide.none)),
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -110,14 +111,14 @@ class _HomePageState extends State<HomePage> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
+                              const Padding(
+                                padding: EdgeInsets.all(8.0),
                                 child: Text(
-                                  'M-Pesa account',
+                                  'M-Pesa Account',
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.w400,
-                                      fontSize: 16),
+                                      fontSize: 18),
                                 ),
                               ),
                               if (!_show) ...[
@@ -150,21 +151,21 @@ class _HomePageState extends State<HomePage> {
                                           fontSize: _show ? 24 : 16)),
                                 )
                               ],
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Container(
-                                  width: 150,
-                                  height: 26,
-                                  decoration: BoxDecoration(
-                                      color: Colors.transparent,
-                                      borderRadius: BorderRadius.circular(30),
-                                      border: Border.all(color: Colors.white)),
-                                  child: GestureDetector(
-                                    onTap: () {
-                                      setState(() {
-                                        _show = !_show;
-                                      });
-                                    },
+                              GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    _show = !_show;
+                                  });
+                                },
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Container(
+                                    width: 150,
+                                    height: 28,
+                                    decoration: BoxDecoration(
+                                        color: Colors.transparent,
+                                        borderRadius: BorderRadius.circular(30),
+                                        border: Border.all(color: Colors.white)),
                                     child: Center(
                                         child: Row(
                                       mainAxisAlignment:
@@ -178,14 +179,14 @@ class _HomePageState extends State<HomePage> {
                                               : CupertinoIcons.eye_slash,
                                           color: Colors.white,
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           width: 10,
                                         ),
                                         Text(
                                             !_show
                                                 ? 'Show Balance'
                                                 : 'Hide Balance',
-                                            style: TextStyle(
+                                            style: const TextStyle(
                                                 color: Colors.white,
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 12)),
@@ -210,36 +211,36 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       const TransactionPanel(),
                       const SizedBox(height: 3),
-                      SizedBox(
-                        height: 70,
-                        child: Material(
-                          elevation: 5,
-                          shape: RoundedRectangleBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10)),
-                              side:
-                                  BorderSide(color: Colors.black12, width: 2)),
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 16),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Icon(Icons.receipt),
-                                Center(
-                                    child: Text(
-                                  "M-Pesa Statements",
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 17),
-                                )),
-                                Icon(Icons.arrow_forward_ios,
-                                    color: AppColors.primaryColor)
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 3),
+                      // SizedBox(
+                      //   height: 70,
+                      //   child: Material(
+                      //     elevation: 5,
+                      //     shape: RoundedRectangleBorder(
+                      //         borderRadius:
+                      //             BorderRadius.all(Radius.circular(10)),
+                      //         side:
+                      //             BorderSide(color: Colors.black12, width: 2)),
+                      //     child: Padding(
+                      //       padding: EdgeInsets.symmetric(horizontal: 16),
+                      //       child: Row(
+                      //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      //         children: [
+                      //           Icon(Icons.receipt),
+                      //           Center(
+                      //               child: Text(
+                      //             "M-Pesa Statements",
+                      //             style: TextStyle(
+                      //                 fontWeight: FontWeight.w400,
+                      //                 fontSize: 17),
+                      //           )),
+                      //           Icon(Icons.arrow_forward_ios,
+                      //               color: AppColors.primaryColor)
+                      //         ],
+                      //       ),
+                      //     ),
+                      //   ),
+                      // ),
+                      // SizedBox(height: 3),
                       Padding(
                         padding: EdgeInsets.symmetric(vertical: 8.0),
                         child: Text(
@@ -251,6 +252,14 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                       const ServicesPanel(),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 16),
+                        child: Material(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(14),
+                                side: BorderSide(color: Colors.black)),
+                            child: LineChartCard()),
+                      )
                     ],
                   ),
                 ),

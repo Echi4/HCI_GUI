@@ -45,6 +45,7 @@ dependencies:
   local_auth: ^2.1.8
   flutter_secure_storage: ^9.0.0
   blur: ^3.1.0
+  fl_chart: ^0.66.1
 
 dev_dependencies:
   flutter_test:

@@ -21,31 +21,19 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  late List<Widget> _pages;
   int _selectedIndex = 0;
   double bottomBarWidth = 30;
   double bottomBarBorderWidth = 3;
 
   AppState? appState;
 
-
   void _onItemTapped(int index) {
-    Provider.of<AppState>(context,listen: false).setBottomNavIndex(index);
+    Provider.of<AppState>(context, listen: false).setBottomNavIndex(index);
   }
 
   @override
   void initState() {
     super.initState();
-
-
-
-    _pages = [
-      const HomePage(),
-      const BuyBundlesScreen(),
-      const MoveMoneyScreen(),
-      const AllServicesScreen(),
-      const SettingsScreen()
-    ];
   }
 
   @override
@@ -57,28 +45,43 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: IndexedStack(index: appState!.bottomNavIndex, children: appState!.bottomNavPages),
+      body: IndexedStack(
+          index: appState!.bottomNavIndex, children: appState!.bottomNavPages),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(IconlyLight.home,size: 24,),
+            icon: Icon(
+              IconlyLight.home,
+              size: 24,
+            ),
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.coins,size: 24,),
+            icon: Icon(
+              FontAwesomeIcons.coins,
+              size: 24,
+            ),
             label: 'Buy Bundles',
-
           ),
           BottomNavigationBarItem(
-            icon: Icon(IconlyLight.send,size: 24,),
+            icon: Icon(
+              IconlyLight.send,
+              size: 24,
+            ),
             label: 'Move Money',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.storefront,size: 24,),
+            icon: Icon(
+              Icons.storefront,
+              size: 24,
+            ),
             label: 'Services',
           ),
           BottomNavigationBarItem(
-            icon: Icon(IconlyLight.setting,size: 24,),
+            icon: Icon(
+              IconlyLight.setting,
+              size: 24,
+            ),
             label: 'Settings',
           ),
         ],
@@ -97,27 +100,30 @@ class _MainScreenState extends State<MainScreen> {
         unselectedIconTheme: const IconThemeData(color: Colors.black54),
         unselectedItemColor: Colors.black,
       ),
-      floatingActionButton: FloatingActionButton(onPressed: (){
-        double height = MediaQuery.of(context).size.height*0.85;
-        showModalBottomSheet(
-          isDismissible: false,
-            isScrollControlled: true,
-            context: context,
-            builder: (context)=>Container(
-          width: MediaQuery.of(context).size.width,
-          height: height,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.only(topLeft: Radius.circular(14),topRight: Radius.circular(14)),
-            color: Colors.white
-          ),
-              child: const ChatScreen(),
-        ));
-      },
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          double height = MediaQuery.of(context).size.height * 0.85;
+          showModalBottomSheet(
+              isDismissible: false,
+              isScrollControlled: true,
+              context: context,
+              builder: (context) => Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: height,
+                    decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(14),
+                            topRight: Radius.circular(14)),
+                        color: Colors.white),
+                    child: const ChatScreen(),
+                  ));
+        },
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-      backgroundColor: Colors.red.shade900,
+        backgroundColor: Colors.red.shade900,
         child: ClipRRect(
-          borderRadius: BorderRadius.circular(30),
-            child: Image.asset(AssetsManager.openaiLogo2)),),
+            borderRadius: BorderRadius.circular(30),
+            child: Image.asset(AssetsManager.openaiLogo2)),
+      ),
     );
   }
 }

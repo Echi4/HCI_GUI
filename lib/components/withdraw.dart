@@ -20,45 +20,43 @@ class TransactionPanel extends StatelessWidget {
             shrinkWrap: true,
             itemCount: homedata1.length,
             itemBuilder: ((context, index) {
-              return Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    GestureDetector(
-                      onTap: () {
-                        if(index==0){
-                          Navigator.push(context, MaterialPageRoute(builder:
-                          (context)=>SendingMoneyScreen()));
-                        }
-                      },
-                      child: SizedBox(
-                        width: 60,
-                        height: 60,
-                        child: Card(
-                          color: Colors.red.shade900,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(70)),
-                          elevation: 0,
-                          child: Icon(
-                            homedata1[index]['icon'],
-                            color: Colors.white,
-                          ),
+              return Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      if(index==0){
+                        Navigator.push(context, MaterialPageRoute(builder:
+                        (context)=>SendingMoneyScreen()));
+                      }
+                    },
+                    child: SizedBox(
+                      width: 60,
+                      height: 60,
+                      child: Card(
+                        color: Colors.red.shade900,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(70)),
+                        elevation: 0,
+                        child: Icon(
+                          homedata1[index]['icon'],
+                          color: Colors.white,
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 28),
-                      child: SizedBox(
-                          width: 60,
-                          child: Center(
-                              child: Text(
-                            homedata1[index]['name'],
-                            style: TextStyle(fontSize: 12),
-                          ))),
-                    )
-                  ],
-                ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8),
+                    child: SizedBox(
+                        width: 62,
+                        child: Center(
+                            child: Text(
+                          homedata1[index]['name'],
+                          style: TextStyle(fontSize: 12),
+                        ))),
+                  )
+                ],
               );
             })),
       ),

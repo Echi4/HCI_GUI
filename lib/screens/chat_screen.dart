@@ -65,6 +65,7 @@ class _ChatScreenState extends State<ChatScreen> {
               icon: Icon(
                 IconlyLight.close_square,
                 size: 34,
+                color: Colors.black,
               ))
         ],
       ),

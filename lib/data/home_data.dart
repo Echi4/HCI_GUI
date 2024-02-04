@@ -7,6 +7,7 @@ List<Map> homedata1 = [
   {"name": "Pay by M-Pesa", "icon": CupertinoIcons.building_2_fill},
   {"name": "Cash Out: Agent", "icon": Icons.local_atm},
   {"name": "Buy Bundles", "icon": Icons.wallet_giftcard},
+  {"name": "Request Statement", "icon": Icons.receipt},
 ];
 
 List<Map> move_money_data = [
