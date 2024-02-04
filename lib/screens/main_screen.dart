@@ -25,11 +25,6 @@ class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
   double bottomBarWidth = 30;
   double bottomBarBorderWidth = 3;
-  // void _onItemTapped(int index) {
-  //   setState(() {
-  //     _selectedIndex = index;
-  //   });
-  // }
 
   AppState? appState;
 

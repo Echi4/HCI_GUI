@@ -53,11 +53,19 @@ class _ChatScreenState extends State<ChatScreen> {
           padding: const EdgeInsets.all(8.0),
           child: Image.asset(AssetsManager.openaiLogo2),
         ),
-        title: const Text('AI Assistant',style: TextStyle(color: Colors.black,fontSize: 18),),
+        title: const Text(
+          'AI Assistant',
+          style: TextStyle(color: Colors.black, fontSize: 18),
+        ),
         actions: [
-          IconButton(onPressed: (){
-            Navigator.pop(context);
-          }, icon: Icon(IconlyLight.close_square,size: 34,))
+          IconButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              icon: Icon(
+                IconlyLight.close_square,
+                size: 34,
+              ))
         ],
       ),
       body: SafeArea(
@@ -149,10 +157,11 @@ class _ChatScreenState extends State<ChatScreen> {
       textEditingController.clear();
       focusNode.unfocus();
 
-      await getChatCompletionAnswer(question: temp, model: modelUsed, context: context);
+      await getChatCompletionAnswer(
+          question: temp, model: modelUsed, context: context);
       setState(() {
         scrollToEnd();
-        chatsList=[];
+        chatsList = [];
         answers = answersList;
         chatsList = chatServer;
         _isTyping = false;
@@ -166,7 +175,9 @@ class _ChatScreenState extends State<ChatScreen> {
             child: Text(
               'Please type a Question',
               style: TextStyle(
-                  color: Colors.white, fontSize: 16, fontWeight: FontWeight.w600),
+                  color: Colors.white,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600),
             ),
           ),
         ),

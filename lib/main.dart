@@ -5,7 +5,6 @@ import 'package:mpesa_ui/utils/colors.dart';
 import 'package:provider/provider.dart';
 
 import 'Providers/appState.dart';
-import 'screens/main_screen.dart';
 
 void main() {
   runApp( MultiProvider(
