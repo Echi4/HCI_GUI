@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-import '../components/gridViewHudumaZote.dart';
-import '../components/hudumazotepanel.dart';
+import '../components/services_grid.dart';
+import '../components/all_services_panel.dart';
 
-class HudumaZote extends StatefulWidget {
-  const HudumaZote({super.key});
+class AllServices extends StatefulWidget {
+  const AllServices({super.key});
 
   @override
-  State<HudumaZote> createState() => _HudumaZoteState();
+  State<AllServices> createState() => _AllServicesState();
 }
 
-class _HudumaZoteState extends State<HudumaZote> {
+class _AllServicesState extends State<AllServices> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -18,14 +18,14 @@ class _HudumaZoteState extends State<HudumaZote> {
       child: ListView(
         children: const [
           SizedBox(height: 5),
-          HudumaZotePanel(),
+          AllServicesPanel(),
           SizedBox(height: 10),
           Text(
-            "Gundua",
+            "Discover",
             style: TextStyle(
                 fontWeight: FontWeight.w500, letterSpacing: 0.8, fontSize: 18),
           ),
-          GHudumaZotePanel()
+          ServicesGrid()
         ],
       ),
     );

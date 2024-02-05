@@ -3,30 +3,30 @@ import 'package:mpesa_ui/data/home_data.dart';
 
 import '../utils/colors.dart';
 
-class HamishaPesaScreen extends StatefulWidget {
-  const HamishaPesaScreen({super.key});
+class MoveMoneyScreen extends StatefulWidget {
+  const MoveMoneyScreen({super.key});
 
   @override
-  State<HamishaPesaScreen> createState() => _HamishaPesaScreenState();
+  State<MoveMoneyScreen> createState() => _MoveMoneyScreenState();
 }
 
-class _HamishaPesaScreenState extends State<HamishaPesaScreen> {
+class _MoveMoneyScreenState extends State<MoveMoneyScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppColors.primaryColor,
         centerTitle: true,
-        title: const Text("Hamisha Pesa"),
+        title: const Text("Move Money"),
       ),
       body: ListView.builder(
           itemExtent: 80.0,
-          itemCount: hamishapesadata.length,
+          itemCount: sendmoneydata.length,
           itemBuilder: ((context, index) {
             return ListTile(
-              leading: Icon(hamishapesadata[index]['icon'], color: Colors.grey),
+              leading: Icon(sendmoneydata[index]['icon'], color: Colors.grey),
               title: Text(
-                hamishapesadata[index]['name'],
+                sendmoneydata[index]['name'],
                 style: TextStyle(fontSize: 20),
               ),
               trailing: const Icon(Icons.arrow_forward_ios,

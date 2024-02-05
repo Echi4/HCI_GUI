@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-List<Map> gunduaData = [
+List<Map> discoverData = [
   {
     "title": "Amsha Ndoto, Amsha Shangwe",
     "subtitle": "Dakika za Bure ukituma",
@@ -18,7 +18,7 @@ List<Map> gunduaData = [
   },
 ];
 
-List<Map> hudumaZote = [
+List<Map> allServices = [
   {
     "image": "assets/images/dstv.jpeg",
     "secondary": "assets/images/dstvlogo.jpeg",
@@ -46,25 +46,25 @@ List<Map> hudumaZote = [
   },
 ];
 
-List<Map> mikopo = [
+List<Map> loans = [
   {
     "image": "assets/images/dstv.jpeg",
     "secondary": "assets/images/mpwa.png",
-    "name": "M-Pawa"
+    "name": "M-Koba"
   },
   {
     "image": "assets/images/uhuru na umoja.jpeg",
     "secondary": "assets/images/gepg.png",
     "name": "M-Pawa"
   },
-  {
-    "image": "assets/images/dstv.jpeg",
-    "secondary": "assets/images/dstvlogo.jpeg",
-    "name": "M-Pawa"
-  },
+  // {
+  //   "image": "assets/images/dstv.jpeg",
+  //   "secondary": "assets/images/dstvlogo.jpeg",
+  //   "name": "M-Pawa"
+  // },
 ];
 
-List<Map> hudumaZakifedha = [
+List<Map> financialServices = [
   {
     "image": "assets/images/dstv.jpeg",
     "secondary": "assets/images/dstvlogo.jpeg",
@@ -82,7 +82,7 @@ List<Map> hudumaZakifedha = [
   },
 ];
 
-List<Map> matumizi = [
+List<Map> utilities = [
   {
     "image": "assets/images/dstv.jpeg",
     "secondary": "assets/images/gepg.png",
@@ -95,7 +95,7 @@ List<Map> matumizi = [
   },
 ];
 
-List<Map> burudani = [
+List<Map> entertainment = [
   {
     "image": "assets/images/dstv.jpeg",
     "secondary": "assets/images/dstvlogo.jpeg",

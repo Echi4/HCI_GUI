@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import '../utils/colors.dart';
 import '../widgets/custom_button.dart';
 
-class NunuaBandoScreen extends StatefulWidget {
-  const NunuaBandoScreen({super.key});
+class BuyBundleTab extends StatefulWidget {
+  const BuyBundleTab({super.key});
 
   @override
-  State<NunuaBandoScreen> createState() => _NunuaBandoScreenState();
+  State<BuyBundleTab> createState() => _BuyBundleTabState();
 }
 
-class _NunuaBandoScreenState extends State<NunuaBandoScreen> {
+class _BuyBundleTabState extends State<BuyBundleTab> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -31,7 +31,7 @@ class _NunuaBandoScreenState extends State<NunuaBandoScreen> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text("Namba yangu"),
+                        const Text("My Number"),
                         const SizedBox(height: 5),
                         Row(
                           children: [
@@ -73,7 +73,7 @@ class _NunuaBandoScreenState extends State<NunuaBandoScreen> {
                   ),
                   Align(
                       alignment: Alignment.bottomCenter,
-                      child: CustomButton(tap: () {}, text: "Endelea"))
+                      child: CustomButton(tap: () {}, text: "Continue"))
                 ],
               ),
             )),

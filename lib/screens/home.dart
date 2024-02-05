@@ -3,8 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:mpesa_ui/data/home_data.dart';
 import 'package:mpesa_ui/utils/colors.dart';
 
-import '../components/gundua.dart';
-import '../components/toapesa.dart';
+import '../components/discover_panel.dart';
+import '../components/withdraw.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -114,7 +114,7 @@ class _HomePageState extends State<HomePage> {
         padding: const EdgeInsets.symmetric(horizontal: 8.0),
         child: ListView(
           children: const [
-            ToaPesaPanel(),
+            WithdrawPanel(),
             SizedBox(height: 3),
             SizedBox(
               height: 70,
@@ -142,13 +142,13 @@ class _HomePageState extends State<HomePage> {
 
 
             Text(
-              "Gundua",
+              "Discover",
               style: TextStyle(
                   fontWeight: FontWeight.w500,
                   letterSpacing: 0.8,
                   fontSize: 18),
             ),
-            GunduaPanel()
+            DiscoverPanel()
           ],
         ),
       )),

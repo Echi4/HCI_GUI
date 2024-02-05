@@ -5,13 +5,12 @@ import 'package:mpesa_ui/utils/colors.dart';
 import 'screens/main_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const MpesaClone());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MpesaClone extends StatelessWidget {
+  const MpesaClone({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
@@ -29,8 +28,6 @@ class MyApp extends StatelessWidget {
             borderSide: BorderSide(width: 3.0, color: AppColors.primaryColor),
           ),
         ),
-        // primaryColor: Colors.pink[800], // outdated and has no effect to Tabbar
-        // accentColor: Colors.cyan[600] // deprecated,
       ),
       home: const MainScreen(),
     );

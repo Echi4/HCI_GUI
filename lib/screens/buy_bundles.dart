@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:mpesa_ui/utils/colors.dart';
 
-import '../pages/nunua_bando.dart';
-import '../pages/ongeza_salio.dart';
+import '../pages/buy_bundle.dart';
+import '../pages/topup.dart';
 
-class MudaWaMaongeziScreen extends StatefulWidget {
-  const MudaWaMaongeziScreen({super.key});
+class BuyBundleScreen extends StatefulWidget {
+  const BuyBundleScreen({super.key});
 
   @override
-  State<MudaWaMaongeziScreen> createState() => _MudaWaMaongeziScreenState();
+  State<BuyBundleScreen> createState() => _BuyBundleScreenState();
 }
 
-class _MudaWaMaongeziScreenState extends State<MudaWaMaongeziScreen> {
+class _BuyBundleScreenState extends State<BuyBundleScreen> {
   TabBar get _tabBar => const TabBar(
         tabs: [
-          Tab(text: "Ongeza salio mara moja"),
-          Tab(text: "Bando"),
+          Tab(text: "Single Top up"),
+          Tab(text: "Bundle"),
         ],
       );
   @override
@@ -27,14 +27,14 @@ class _MudaWaMaongeziScreenState extends State<MudaWaMaongeziScreen> {
         appBar: AppBar(
           backgroundColor: AppColors.primaryColor,
           centerTitle: true,
-          title: const Text("Muda wa maongezi"),
+          title: const Text("Buy Bundle"),
           bottom: PreferredSize(
             preferredSize: _tabBar.preferredSize,
             child: ColoredBox(color: Colors.white, child: _tabBar),
           ),
         ),
         body: const TabBarView(
-          children: [TumePesaScreen(), NunuaBandoScreen()],
+          children: [SendMoneyTab(), BuyBundleTab()],
         ),
       ),
     );

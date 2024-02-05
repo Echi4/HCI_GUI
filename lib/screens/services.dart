@@ -1,22 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-
-import '../components/gridViewHudumaZote.dart';
-import '../components/huduma_zote2.dart';
-import '../components/huduma_zote3.dart';
-import '../components/huduma_zote4.dart';
-import '../components/huduma_zote5.dart';
-import '../pages/huduma_zote.dart';
+import '../components/services_panel2.dart';
+import '../components/services_panel3.dart';
+import '../components/services_panel4.dart';
+import '../components/services_panel5.dart';
+import '../pages/all_services.dart';
 import '../utils/colors.dart';
 
-class HudumaScreen extends StatefulWidget {
-  const HudumaScreen({super.key});
+class ServicesScreen extends StatefulWidget {
+  const ServicesScreen({super.key});
 
   @override
-  State<HudumaScreen> createState() => _HudumaScreenState();
+  State<ServicesScreen> createState() => _ServicesScreenState();
 }
 
-class _HudumaScreenState extends State<HudumaScreen>
+class _ServicesScreenState extends State<ServicesScreen>
     with SingleTickerProviderStateMixin {
   TabController? _tabController;
   int _activeIndex = 0;
@@ -34,47 +32,47 @@ class _HudumaScreenState extends State<HudumaScreen>
             borderRadius: BorderRadius.circular(20),
             border: Border.all(color: Colors.white38)),
         tabs: [
-          HudumaTabs(
+          ServiceTabs(
               iconColor: _activeIndex == 0 ? Colors.white : Colors.grey,
               boxColor:
-                  _activeIndex == 0 ? AppColors.primaryColor : Colors.white,
+              _activeIndex == 0 ? AppColors.primaryColor : Colors.white,
               textColor: _activeIndex == 0 ? Colors.white : Colors.grey,
               color: _activeIndex == 0 ? Colors.transparent : Colors.grey,
               icon: Icons.all_inbox,
-              title: "Huduma zote"),
-          HudumaTabs(
+              title: "All Services"),
+          ServiceTabs(
               iconColor: _activeIndex == 1 ? Colors.white : Colors.grey,
               boxColor:
-                  _activeIndex == 1 ? AppColors.primaryColor : Colors.white,
+              _activeIndex == 1 ? AppColors.primaryColor : Colors.white,
               textColor: _activeIndex == 1 ? Colors.white : Colors.grey,
               color: _activeIndex == 1 ? Colors.transparent : Colors.grey,
               icon: Icons.handshake_outlined,
               // some sort of hand begging for help
-              title: "Mikopo na Akiba"),
-          HudumaTabs(
+              title: "Loans and Savings"),
+          ServiceTabs(
               iconColor: _activeIndex == 2 ? Colors.white : Colors.grey,
               boxColor:
-                  _activeIndex == 2 ? AppColors.primaryColor : Colors.white,
+              _activeIndex == 2 ? AppColors.primaryColor : Colors.white,
               textColor: _activeIndex == 2 ? Colors.white : Colors.grey,
               color: _activeIndex == 2 ? Colors.transparent : Colors.grey,
               icon: Icons.account_balance,
-              title: "Huduma za Kifedha"),
-          HudumaTabs(
+              title: "Financial Services"),
+          ServiceTabs(
               iconColor: _activeIndex == 3 ? Colors.white : Colors.grey,
               boxColor:
-                  _activeIndex == 3 ? AppColors.primaryColor : Colors.white,
+              _activeIndex == 3 ? AppColors.primaryColor : Colors.white,
               textColor: _activeIndex == 3 ? Colors.white : Colors.grey,
               color: _activeIndex == 3 ? Colors.transparent : Colors.grey,
               icon: Icons.water_drop_outlined,
-              title: "Matumizi"),
-          HudumaTabs(
+              title: "Utilities"),
+          ServiceTabs(
               iconColor: _activeIndex == 4 ? Colors.white : Colors.grey,
               boxColor:
-                  _activeIndex == 4 ? AppColors.primaryColor : Colors.white,
+              _activeIndex == 4 ? AppColors.primaryColor : Colors.white,
               textColor: _activeIndex == 4 ? Colors.white : Colors.grey,
               color: _activeIndex == 4 ? Colors.transparent : Colors.grey,
               icon: Icons.games,
-              title: "Burudani"),
+              title: "Entertainment"),
         ],
       );
 
@@ -108,7 +106,7 @@ class _HudumaScreenState extends State<HudumaScreen>
         appBar: AppBar(
           backgroundColor: AppColors.primaryColor,
           centerTitle: true,
-          title: const Text("Huduma"),
+          title: const Text("Services"),
           bottom: PreferredSize(
             preferredSize: _tabBar.preferredSize,
             child: ColoredBox(color: Colors.white, child: _tabBar),
@@ -119,11 +117,11 @@ class _HudumaScreenState extends State<HudumaScreen>
           child: TabBarView(
             controller: _tabController,
             children: const [
-              HudumaZote(),
-              GHudumaZotePanel2(),
-              GHudumaZotePanel3(),
-              GHudumaZotePanel4(),
-              GHudumaZotePanel5(),
+              AllServices(),
+              ServicesPanel2(),
+              ServicesPanel3(),
+              ServicesPanel4(),
+              ServicesPanel5(),
             ],
           ),
         ),
@@ -132,7 +130,7 @@ class _HudumaScreenState extends State<HudumaScreen>
   }
 }
 
-class HudumaTabs extends StatelessWidget {
+class ServiceTabs extends StatelessWidget {
   final String title;
   final Color color;
   final IconData icon;
@@ -140,7 +138,7 @@ class HudumaTabs extends StatelessWidget {
   final Color iconColor;
   final Color textColor;
 
-  const HudumaTabs({
+  const ServiceTabs({
     Key? key,
     required this.title,
     required this.color,

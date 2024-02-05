@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 import 'home.dart';
-import 'huduma.dart';
-import 'mipangalio.dart';
-import 'muda_maongezi.dart';
-import 'hamisha_pesa.dart';
+import 'services.dart';
+import 'settings_screen.dart';
+import 'buy_bundles.dart';
+import 'send_money.dart';
 import '../utils/colors.dart';
 
 class MainScreen extends StatefulWidget {
@@ -31,10 +31,10 @@ class _MainScreenState extends State<MainScreen> {
 
     _pages = [
       const HomePage(),
-      const MudaWaMaongeziScreen(),
-      const HamishaPesaScreen(),
-      const HudumaScreen(),
-      const MipangilioScreen()
+      const BuyBundleScreen(),
+      const MoveMoneyScreen(),
+      const ServicesScreen(),
+      const SettingsScreen()
 
       // const ViewCrops(),
       // const AddProduct(),

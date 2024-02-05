@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import '../utils/colors.dart';
 import '../widgets/custom_button.dart';
 
-class TumePesaScreen extends StatefulWidget {
-  const TumePesaScreen({super.key});
+class SendMoneyTab extends StatefulWidget {
+  const SendMoneyTab({super.key});
 
   @override
-  State<TumePesaScreen> createState() => _TumePesaScreenState();
+  State<SendMoneyTab> createState() => _SendMoneyTabState();
 }
 
-class _TumePesaScreenState extends State<TumePesaScreen> {
+class _SendMoneyTabState extends State<SendMoneyTab> {
   final priceController = TextEditingController();
   final phoneController = TextEditingController();
   late int tappedIndex;
@@ -62,7 +62,7 @@ class _TumePesaScreenState extends State<TumePesaScreen> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text("Namba yangu"),
+                        const Text("My Number"),
                         const SizedBox(height: 5),
                         Row(
                           children: [
@@ -111,7 +111,7 @@ class _TumePesaScreenState extends State<TumePesaScreen> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text("Kiasi"),
+                        const Text("Amount"),
                         const SizedBox(height: 5),
                         Container(
                             decoration: BoxDecoration(
@@ -180,7 +180,7 @@ class _TumePesaScreenState extends State<TumePesaScreen> {
                   // const SizedBox(height: 200),
                   Align(
                       alignment: Alignment.bottomCenter,
-                      child: CustomButton(tap: () {}, text: "Endelea"))
+                      child: CustomButton(tap: () {}, text: "Continue"))
                 ],
               ),
             )),

@@ -4,8 +4,8 @@ import 'package:flutter/src/widgets/framework.dart';
 
 import '../data/home_data.dart';
 
-class ToaPesaPanel extends StatelessWidget {
-  const ToaPesaPanel({super.key});
+class WithdrawPanel extends StatelessWidget {
+  const WithdrawPanel({super.key});
 
   @override
   Widget build(BuildContext context) {

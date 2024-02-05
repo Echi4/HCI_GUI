@@ -8,7 +8,7 @@ List<Map> homedata1 = [
   {"name": "Buy Bundles", "icon": Icons.wallet_giftcard},
 ];
 
-List<Map> hamishapesadata = [
+List<Map> sendmoneydata = [
   {"name": "Make Payment", "icon": Icons.money_outlined},
   {"name": "Withdraw", "icon": Icons.card_membership},
   {"name": "Send Money International", "icon": Icons.inventory_2_outlined},
