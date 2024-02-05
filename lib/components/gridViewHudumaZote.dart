@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../data/discover.dart';
+import '../data/gundua.dart';
 
-class ServicesPanel2 extends StatelessWidget {
-  const ServicesPanel2({super.key});
+class GHudumaZotePanel extends StatelessWidget {
+  const GHudumaZotePanel({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class ServicesPanel2 extends StatelessWidget {
           crossAxisCount: (orientation == Orientation.portrait) ? 3 : 3),
       shrinkWrap: true,
       physics: const ScrollPhysics(),
-      itemCount: loans.length,
+      itemCount: hudumaZote.length,
       itemBuilder: ((context, index) {
         return Padding(
           padding: const EdgeInsets.all(8.0),
@@ -27,12 +27,12 @@ class ServicesPanel2 extends StatelessWidget {
                 decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     image: DecorationImage(
-                        image: ExactAssetImage(loans[index]['secondary']),
+                        image: ExactAssetImage(hudumaZote[index]['secondary']),
                         fit: BoxFit.cover)),
               ),
               const SizedBox(height: 5),
               Text(
-                loans[index]['name'],
+                hudumaZote[index]['name'],
                 style: TextStyle(
                     fontWeight: FontWeight.w500,
                     letterSpacing: 0.5,

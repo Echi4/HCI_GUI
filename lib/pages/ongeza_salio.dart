@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import '../utils/colors.dart';
 import '../widgets/custom_button.dart';
 
-class SendMoneyScreen extends StatefulWidget {
-  const SendMoneyScreen({super.key});
+class TumePesaScreen extends StatefulWidget {
+  const TumePesaScreen({super.key});
 
   @override
-  State<SendMoneyScreen> createState() => _SendMoneyScreenState();
+  State<TumePesaScreen> createState() => _TumePesaScreenState();
 }
 
-class _SendMoneyScreenState extends State<SendMoneyScreen> {
+class _TumePesaScreenState extends State<TumePesaScreen> {
   final priceController = TextEditingController();
   final phoneController = TextEditingController();
   late int tappedIndex;
@@ -48,8 +48,7 @@ class _SendMoneyScreenState extends State<SendMoneyScreen> {
       padding: const EdgeInsets.all(15.0),
       child: SizedBox(
         height: 120,
-        child: Material(
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+        child: Card(
             elevation: 8,
             child: Padding(
               padding: const EdgeInsets.all(15.0),
@@ -63,7 +62,7 @@ class _SendMoneyScreenState extends State<SendMoneyScreen> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text("My Number"),
+                        const Text("Namba yangu"),
                         const SizedBox(height: 5),
                         Row(
                           children: [
@@ -112,7 +111,7 @@ class _SendMoneyScreenState extends State<SendMoneyScreen> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text("Amount"),
+                        const Text("Kiasi"),
                         const SizedBox(height: 5),
                         Container(
                             decoration: BoxDecoration(
@@ -181,7 +180,7 @@ class _SendMoneyScreenState extends State<SendMoneyScreen> {
                   // const SizedBox(height: 200),
                   Align(
                       alignment: Alignment.bottomCenter,
-                      child: CustomButton(tap: () {}, text: "Proceed", color: AppColors.primaryColor,))
+                      child: CustomButton(tap: () {}, text: "Endelea"))
                 ],
               ),
             )),

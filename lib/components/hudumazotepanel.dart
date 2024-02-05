@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../data/discover.dart';
+import '../data/gundua.dart';
 
 class HudumaZotePanel extends StatelessWidget {
   const HudumaZotePanel({super.key});
@@ -12,7 +12,7 @@ class HudumaZotePanel extends StatelessWidget {
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         shrinkWrap: true,
-        itemCount: allServices.take(4).length,
+        itemCount: hudumaZote.take(4).length,
         itemBuilder: ((context, index) {
           return Padding(
             padding: const EdgeInsets.all(3.0),
@@ -28,7 +28,7 @@ class HudumaZotePanel extends StatelessWidget {
                           borderRadius: BorderRadius.circular(8),
                           image: DecorationImage(
                               image:
-                                  ExactAssetImage(allServices[index]['image']),
+                                  ExactAssetImage(hudumaZote[index]['image']),
                               fit: BoxFit.cover)),
                     ),
                   ),
@@ -43,7 +43,7 @@ class HudumaZotePanel extends StatelessWidget {
                         shape: BoxShape.circle,
                         image: DecorationImage(
                           image:
-                              ExactAssetImage(allServices[index]['secondary']),
+                              ExactAssetImage(hudumaZote[index]['secondary']),
                           fit: BoxFit.fill,
                         )),
                   ),

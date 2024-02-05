@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 import '../utils/colors.dart';
 
-class SettingsSection extends StatelessWidget {
+class MipangilioUI extends StatelessWidget {
   final String title;
-  final List<Widget> tile;
-  const SettingsSection({
+  final List<MipangilioTile> tile;
+  const MipangilioUI({
     Key? key,
     this.title = '',
     required this.tile,
@@ -34,12 +34,12 @@ class SettingsSection extends StatelessWidget {
   }
 }
 
-class SettingsContent extends StatelessWidget {
+class MipangilioTile extends StatelessWidget {
   final IconData icon;
   final String tileTitle;
   final Color titleColor;
 
-  const SettingsContent({
+  const MipangilioTile({
     Key? key,
     required this.icon,
     required this.tileTitle,
@@ -56,7 +56,7 @@ class SettingsContent extends StatelessWidget {
             fontSize: 18, fontWeight: FontWeight.w400, color: titleColor),
       ),
       trailing:
-           Icon(Icons.arrow_forward_ios, color: AppColors.primaryColor),
+          const Icon(Icons.arrow_forward_ios, color: AppColors.primaryColor),
     );
   }
 }

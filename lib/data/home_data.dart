@@ -1,16 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:iconly/iconly.dart';
 
 List<Map> homedata1 = [
-  {"name": "Send Money", "icon": IconlyLight.send},
+  {"name": "Send Money", "icon": Icons.inventory_2_outlined},
   {"name": "Pay by M-Pesa", "icon": CupertinoIcons.building_2_fill},
   {"name": "Cash Out: Agent", "icon": Icons.local_atm},
   {"name": "Buy Bundles", "icon": Icons.wallet_giftcard},
-  {"name": "Request Statement", "icon": Icons.receipt},
 ];
 
-List<Map> move_money_data = [
+List<Map> hamishapesadata = [
   {"name": "Make Payment", "icon": Icons.money_outlined},
   {"name": "Withdraw", "icon": Icons.card_membership},
   {"name": "Send Money International", "icon": Icons.inventory_2_outlined},

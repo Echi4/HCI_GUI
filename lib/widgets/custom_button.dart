@@ -6,11 +6,11 @@ class CustomButton extends StatelessWidget {
   final VoidCallback tap;
   final String text;
   final Color color;
-   CustomButton({
+  const CustomButton({
     Key? key,
     required this.tap,
     required this.text,
-    required this.color,
+    this.color = AppColors.primaryColor,
   }) : super(key: key);
 
   @override

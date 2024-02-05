@@ -3,22 +3,21 @@ import 'package:flutter/material.dart';
 import '../utils/colors.dart';
 import '../widgets/custom_button.dart';
 
-class BundlesScreen extends StatefulWidget {
-  const BundlesScreen({super.key});
+class NunuaBandoScreen extends StatefulWidget {
+  const NunuaBandoScreen({super.key});
 
   @override
-  State<BundlesScreen> createState() => _BundlesScreenState();
+  State<NunuaBandoScreen> createState() => _NunuaBandoScreenState();
 }
 
-class _BundlesScreenState extends State<BundlesScreen> {
+class _NunuaBandoScreenState extends State<NunuaBandoScreen> {
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(15.0),
       child: SizedBox(
         height: 120,
-        child: Material(
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+        child: Card(
             elevation: 8,
             child: Padding(
               padding: const EdgeInsets.all(15.0),
@@ -32,7 +31,7 @@ class _BundlesScreenState extends State<BundlesScreen> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text("My Number"),
+                        const Text("Namba yangu"),
                         const SizedBox(height: 5),
                         Row(
                           children: [
@@ -74,7 +73,7 @@ class _BundlesScreenState extends State<BundlesScreen> {
                   ),
                   Align(
                       alignment: Alignment.bottomCenter,
-                      child: CustomButton(tap: () {}, text: "Proceed", color: AppColors.primaryColor,))
+                      child: CustomButton(tap: () {}, text: "Endelea"))
                 ],
               ),
             )),
