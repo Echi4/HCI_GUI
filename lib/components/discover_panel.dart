@@ -19,19 +19,14 @@ class DiscoverPanel extends StatelessWidget {
               child: SizedBox(
                 width: MediaQuery.of(context).size.width * 0.44,
                 child: Card(
+                  color: Colors.white,
                   elevation: 5,
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Image.asset(discoverData[index]['image'],
-                            height: 50, width: 60, fit: BoxFit.cover),
-                        const SizedBox(width: 10),
-                        Expanded(
-                          child: Text(discoverData[index]['title'],
-                              overflow: TextOverflow.ellipsis),
-                        )
+                        Image.asset(discoverData[index]['image'],height: 90, width: 90, fit: BoxFit.cover),
                       ],
                     ),
                   ),

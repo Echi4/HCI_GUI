@@ -36,7 +36,7 @@ class ServicesPanel4 extends StatelessWidget {
                 style: TextStyle(
                     fontWeight: FontWeight.w500,
                     letterSpacing: 0.5,
-                    fontSize: 16),
+                    fontSize: 14),
               )
             ],
           ),

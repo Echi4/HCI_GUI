@@ -21,6 +21,9 @@ class MpesaClone extends StatelessWidget {
       title: 'Mpesa UI',
       theme: ThemeData(
         primarySwatch: Colors.red,
+        appBarTheme: AppBarTheme(
+          titleTextStyle: TextStyle(color: Colors.white,fontSize: 26,fontWeight: FontWeight.w300)
+        ),
         tabBarTheme: TabBarTheme(
           labelColor: Colors.black45,
           labelStyle: TextStyle(color: Colors.black45), // color for text
