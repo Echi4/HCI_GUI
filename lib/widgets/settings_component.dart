@@ -49,14 +49,14 @@ class SettingsContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: Icon(icon),
+      leading: Icon(icon, color: AppColors.primaryColor),
       title: Text(
         tileTitle,
         style: TextStyle(
             fontSize: 18, fontWeight: FontWeight.w400, color: titleColor),
       ),
-      trailing:
-          const Icon(Icons.arrow_forward_ios, color: AppColors.primaryColor),
+      trailing: const Icon(Icons.arrow_forward_rounded,
+          color: AppColors.primaryColor),
     );
   }
 }

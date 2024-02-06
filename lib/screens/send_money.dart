@@ -17,19 +17,20 @@ class _MoveMoneyScreenState extends State<MoveMoneyScreen> {
       appBar: AppBar(
         backgroundColor: AppColors.primaryColor,
         centerTitle: true,
-        title: const Text("Move Money"),
+        title: const Text("Jihudumie"),
       ),
       body: ListView.builder(
           itemExtent: 80.0,
           itemCount: sendmoneydata.length,
           itemBuilder: ((context, index) {
             return ListTile(
-              leading: Icon(sendmoneydata[index]['icon'], color: Colors.grey),
+              leading:
+                  Icon(sendmoneydata[index]['icon'], color: Colors.blueGrey),
               title: Text(
                 sendmoneydata[index]['name'],
                 style: TextStyle(fontSize: 20),
               ),
-              trailing: const Icon(Icons.arrow_forward_ios,
+              trailing: const Icon(Icons.arrow_forward_rounded,
                   color: AppColors.primaryColor),
             );
           })),

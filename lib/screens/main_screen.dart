@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:mpesa_ui/data/discover.dart';
 
+import '../services/assets_manager.dart';
+import 'chat_screen.dart';
 import 'home.dart';
 import 'services.dart';
 import 'settings_screen.dart';
@@ -33,7 +37,8 @@ class _MainScreenState extends State<MainScreen> {
       const HomePage(),
       const BuyBundleScreen(),
       const MoveMoneyScreen(),
-      const ServicesScreen(),
+      const ChatScreen(),
+      // const ServicesScreen(),
       const SettingsScreen()
 
       // const ViewCrops(),
@@ -49,29 +54,52 @@ class _MainScreenState extends State<MainScreen> {
       bottomNavigationBar: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
+              icon: SvgPicture.asset(
+                'assets/svgs/home-angle-svgrepo-com.svg',
+                width: 25.0,
+                height: 25.0,
+                color:
+                    _selectedIndex == 0 ? AppColors.primaryColor : Colors.black,
+              ),
+              label: "Nyumbani"),
           BottomNavigationBarItem(
-            icon: Icon(Icons.money_outlined),
-            label: 'Buy Bundles',
-          ),
+              icon: SvgPicture.asset(
+                'assets/svgs/ticket-free-6-svgrepo-com.svg',
+                width: 25.0,
+                height: 25.0,
+                color:
+                    _selectedIndex == 1 ? AppColors.primaryColor : Colors.black,
+              ),
+              label: "Nunua Bando"),
           BottomNavigationBarItem(
-            icon: Icon(Icons.payments_outlined),
-            label: 'Move Money',
-          ),
+              icon: SvgPicture.asset(
+                'assets/svgs/wallet-send-svgrepo-com.svg',
+                width: 25.0,
+                height: 25.0,
+                color:
+                    _selectedIndex == 2 ? AppColors.primaryColor : Colors.black,
+              ),
+              label: "Tuma Pesa"),
           BottomNavigationBarItem(
-            icon: Icon(Icons.storefront),
-            label: 'Services',
-          ),
+              icon: SvgPicture.asset(
+                'assets/svgs/support.svg',
+                width: 25.0,
+                height: 25.0,
+              ),
+              label: "Huduma Bot"),
           BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Settings',
-          ),
+              icon: SvgPicture.asset(
+                'assets/svgs/settings-svgrepo-com.svg',
+                width: 25.0,
+                height: 25.0,
+                color:
+                    _selectedIndex == 3 ? AppColors.primaryColor : Colors.black,
+              ),
+              label: "Mpangilio"),
         ],
         currentIndex: _selectedIndex, //New
         onTap: _onItemTapped,
-        iconSize: 28,
+        iconSize: 30.0,
         selectedFontSize: 13.0,
         unselectedFontSize: 12.0,
         showSelectedLabels: true,
@@ -84,6 +112,30 @@ class _MainScreenState extends State<MainScreen> {
         unselectedIconTheme: const IconThemeData(color: Colors.black54),
         unselectedItemColor: Colors.black,
       ),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {
+      //     double height = MediaQuery.of(context).size.height * 0.85;
+      //     showModalBottomSheet(
+      //         isDismissible: false,
+      //         isScrollControlled: true,
+      //         context: context,
+      //         builder: (context) => Container(
+      //               width: MediaQuery.of(context).size.width,
+      //               height: height,
+      //               decoration: const BoxDecoration(
+      //                   borderRadius: BorderRadius.only(
+      //                       topLeft: Radius.circular(14),
+      //                       topRight: Radius.circular(14)),
+      //                   color: Colors.white),
+      //               child: const ChatScreen(),
+      //             ));
+      //   },
+      //   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+      //   backgroundColor: Colors.white,
+      //   child: ClipRRect(
+      //       borderRadius: BorderRadius.circular(2),
+      //       child: Image.asset(AssetsManager.openaiLogo2)),
+      // ),
     );
   }
 }

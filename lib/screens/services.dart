@@ -35,7 +35,7 @@ class _ServicesScreenState extends State<ServicesScreen>
           ServiceTabs(
               iconColor: _activeIndex == 0 ? Colors.white : Colors.grey,
               boxColor:
-              _activeIndex == 0 ? AppColors.primaryColor : Colors.white,
+                  _activeIndex == 0 ? AppColors.primaryColor : Colors.white,
               textColor: _activeIndex == 0 ? Colors.white : Colors.grey,
               color: _activeIndex == 0 ? Colors.transparent : Colors.grey,
               icon: Icons.all_inbox,
@@ -43,7 +43,7 @@ class _ServicesScreenState extends State<ServicesScreen>
           ServiceTabs(
               iconColor: _activeIndex == 1 ? Colors.white : Colors.grey,
               boxColor:
-              _activeIndex == 1 ? AppColors.primaryColor : Colors.white,
+                  _activeIndex == 1 ? AppColors.primaryColor : Colors.white,
               textColor: _activeIndex == 1 ? Colors.white : Colors.grey,
               color: _activeIndex == 1 ? Colors.transparent : Colors.grey,
               icon: Icons.handshake_outlined,
@@ -52,7 +52,7 @@ class _ServicesScreenState extends State<ServicesScreen>
           ServiceTabs(
               iconColor: _activeIndex == 2 ? Colors.white : Colors.grey,
               boxColor:
-              _activeIndex == 2 ? AppColors.primaryColor : Colors.white,
+                  _activeIndex == 2 ? AppColors.primaryColor : Colors.white,
               textColor: _activeIndex == 2 ? Colors.white : Colors.grey,
               color: _activeIndex == 2 ? Colors.transparent : Colors.grey,
               icon: Icons.account_balance,
@@ -60,7 +60,7 @@ class _ServicesScreenState extends State<ServicesScreen>
           ServiceTabs(
               iconColor: _activeIndex == 3 ? Colors.white : Colors.grey,
               boxColor:
-              _activeIndex == 3 ? AppColors.primaryColor : Colors.white,
+                  _activeIndex == 3 ? AppColors.primaryColor : Colors.white,
               textColor: _activeIndex == 3 ? Colors.white : Colors.grey,
               color: _activeIndex == 3 ? Colors.transparent : Colors.grey,
               icon: Icons.water_drop_outlined,
@@ -68,7 +68,7 @@ class _ServicesScreenState extends State<ServicesScreen>
           ServiceTabs(
               iconColor: _activeIndex == 4 ? Colors.white : Colors.grey,
               boxColor:
-              _activeIndex == 4 ? AppColors.primaryColor : Colors.white,
+                  _activeIndex == 4 ? AppColors.primaryColor : Colors.white,
               textColor: _activeIndex == 4 ? Colors.white : Colors.grey,
               color: _activeIndex == 4 ? Colors.transparent : Colors.grey,
               icon: Icons.games,
@@ -151,24 +151,27 @@ class ServiceTabs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Tab(
-        child: Container(
-            decoration: BoxDecoration(
-                color: boxColor,
-                borderRadius: BorderRadius.circular(30),
-                border: Border.all(width: 2, color: color)),
-            child: Padding(
-              padding: const EdgeInsets.all(7.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Icon(icon, size: 18, color: iconColor),
-                  const SizedBox(width: 5),
-                  Text(
-                    title,
-                    style: TextStyle(fontSize: 15, color: textColor),
-                  ),
-                ],
+      child: Container(
+        decoration: BoxDecoration(
+          color: boxColor,
+          borderRadius: BorderRadius.circular(30),
+          border: Border.all(width: 2, color: color),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(7.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Icon(icon, size: 18, color: iconColor),
+              const SizedBox(width: 5),
+              Text(
+                title,
+                style: TextStyle(fontSize: 15, color: textColor),
               ),
-            )));
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }

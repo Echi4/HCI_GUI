@@ -9,10 +9,12 @@ List<Map> homedata1 = [
 ];
 
 List<Map> sendmoneydata = [
-  {"name": "Make Payment", "icon": Icons.money_outlined},
-  {"name": "Withdraw", "icon": Icons.card_membership},
-  {"name": "Send Money International", "icon": Icons.inventory_2_outlined},
-  {"name": "Send to Bank", "icon": Icons.backup_table_rounded},
-  {"name": "Reverse Transaction", "icon": Icons.redo_outlined},
-  {"name": "Request Money", "icon": Icons.receipt_long_outlined},
+  {"name": "Rudisha Muamala", "icon": Icons.redo_rounded},
+  {"name": "Fanya Malipo", "icon": Icons.payment_rounded},
+
+  // {"name": "Send Money International", "icon": Icons.inventory_2_outlined},
+  {"name": "Tuma kwenda Benki", "icon": Icons.attach_money_rounded},
+  {"name": "Toa Pesa", "icon": Icons.atm},
+
+  // {"name": "Request Money", "icon": Icons.receipt_long_outlined},
 ];

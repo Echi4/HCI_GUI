@@ -18,10 +18,10 @@ class _SendMoneyTabState extends State<SendMoneyTab> {
   String? priceValue;
 
   List<Map> price = [
-    {"id": 1, "value": "5,000"},
-    {"id": 2, "value": "10,000"},
-    {"id": 3, "value": "20,000"},
-    {"id": 4, "value": "30,000"}
+    {"id": 1, "value": "1,000"},
+    {"id": 2, "value": "2,000"},
+    {"id": 3, "value": "5,000"},
+    {"id": 4, "value": "10,000"}
   ];
   void setValue(String value) {
     setState(() {
@@ -47,11 +47,11 @@ class _SendMoneyTabState extends State<SendMoneyTab> {
     return Padding(
       padding: const EdgeInsets.all(15.0),
       child: SizedBox(
-        height: 120,
+        height: 150,
         child: Card(
-            elevation: 8,
+            elevation: 2,
             child: Padding(
-              padding: const EdgeInsets.all(15.0),
+              padding: const EdgeInsets.all(20.0),
               child: Stack(
                 // alignment: Alignment.topCenter,
                 children: [
@@ -62,14 +62,14 @@ class _SendMoneyTabState extends State<SendMoneyTab> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text("My Number"),
+                        const Text("Namba ya Simu"),
                         const SizedBox(height: 5),
                         Row(
                           children: [
                             Expanded(
                               child: Container(
                                   decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(5),
+                                      borderRadius: BorderRadius.circular(20.0),
                                       border: Border.all(
                                           color: Colors.grey, width: 1)),
                                   child: TextFormField(
@@ -86,18 +86,12 @@ class _SendMoneyTabState extends State<SendMoneyTab> {
                                   )),
                             ),
                             const SizedBox(width: 10),
-                            Container(
-                              decoration: const BoxDecoration(
-                                  borderRadius: BorderRadius.only(
-                                      topRight: Radius.circular(10),
-                                      bottomLeft: Radius.circular(10),
-                                      bottomRight: Radius.circular(0)),
-                                  color: Colors.black54),
-                              child: IconButton(
-                                icon: const Icon(Icons.person),
-                                onPressed: () {},
-                              ),
-                            )
+                            // Container(
+                            //   child: IconButton(
+                            //     icon: const Icon(Icons.person),
+                            //     onPressed: () {},
+                            //   ),
+                            // )
                           ],
                         ),
                       ],
@@ -111,11 +105,11 @@ class _SendMoneyTabState extends State<SendMoneyTab> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text("Amount"),
+                        const Text("Kiasi"),
                         const SizedBox(height: 5),
                         Container(
                             decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5),
+                                borderRadius: BorderRadius.circular(20.0),
                                 border:
                                     Border.all(color: Colors.grey, width: 1)),
                             child: TextFormField(
@@ -159,7 +153,8 @@ class _SendMoneyTabState extends State<SendMoneyTab> {
                                 child: Container(
                                     width: 68,
                                     decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(8),
+                                        borderRadius:
+                                            BorderRadius.circular(20.0),
                                         border: Border.all(
                                             color: tappedIndex == index
                                                 ? AppColors.primaryColor
@@ -180,7 +175,7 @@ class _SendMoneyTabState extends State<SendMoneyTab> {
                   // const SizedBox(height: 200),
                   Align(
                       alignment: Alignment.bottomCenter,
-                      child: CustomButton(tap: () {}, text: "Continue"))
+                      child: CustomButton(tap: () {}, text: "Endelea"))
                 ],
               ),
             )),

@@ -24,14 +24,18 @@ class WithdrawPanel extends StatelessWidget {
                     width: 60,
                     height: 60,
                     child: Card(
-                      color:Colors.red,
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(70)),
+                      color: Colors.red,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20)),
                       elevation: 0,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Icon(homedata1[index]['icon'],color: Colors.white,),
+                          Icon(
+                            homedata1[index]['icon'],
+                            color: Colors.white,
+                          ),
                         ],
                       ),
                     ),
@@ -41,7 +45,7 @@ class WithdrawPanel extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8),
                     child: SizedBox(
-                      width:70,
+                        width: 70,
                         child: Center(child: Text(homedata1[index]['name']))),
                   ),
                 )
